@@ -1,16 +1,59 @@
-# React + Vite
+# CarbonRoute UI 🌱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**The Frontend Dashboard for Sustainable AI Inference**
 
-Currently, two official plugins are available:
+This is the client-side interface for **CarbonRoute**, a sustainable AI routing engine. Built with React and Vite, this dashboard allows users to input prompts, configure Service Level Agreement (SLA) weights in real-time, and visualize the exact cloud region, carbon footprint, and latency of their AI inference execution.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features
 
-## React Compiler
+*   **Dynamic SLA Configuration:** Adjustable sliders allow users to set strict latency limits (e.g., < 200ms) and balance priorities between carbon efficiency and compute cost.
+*   **Live Telemetry Visualization:** Instantly displays the routing decision, including the selected global region, network latency, and the live carbon intensity (gCO2/kWh) of that specific grid.
+*   **Zero-Emission Cache Indicators:** Automatically detects and highlights when a response is served directly from the edge cache (Redis) resulting in 0 gCO2/kWh emissions.
+*   **Minimalist, Responsive UI:** Built with Tailwind CSS to ensure a clean, accessible, and fast experience across all devices.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+*   **Framework:** React (Vite)
+*   **Styling:** Tailwind CSS
+*   **Integration:** REST API via Fetch (Connects to `carbonroute-api`)
+*   **Deployment:** Render / Vercel 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Getting Started
+
+### Prerequisites
+*   Node.js (v18 or higher)
+*   The [carbonroute-api](https://github.com/dheerajeshwar32/carbonroute-api) backend running locally or deployed in the cloud.
+
+### Local Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone [https://github.com/dheerajeshwar32/CarbonRoute.git](https://github.com/dheerajeshwar32/CarbonRoute.git)
+    cd CarbonRoute
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Configure Environment Variables:
+    Create a `.env` file in the root directory to point to your backend proxy:
+    ```env
+    VITE_API_BASE_URL=http://localhost:10000/api/v1
+    ```
+
+4.  Start the Development Server:
+    ```bash
+    npm run dev
+    ```
+    The application will launch and be accessible at `http://localhost:5173`.
+
+## 🔗 Architecture Context
+
+This repository is strictly the client-side presentation layer. The actual live grid polling, region scheduling algorithm, Redis caching, and Google Gemini execution are handled by the backend proxy. 
+
+To view the core routing logic, please visit the backend repository: [carbonroute-api](https://github.com/dheerajeshwar32/carbonroute-api).
+
+---
+*Engineered by Nagula Dheeraj Eshwar Prudhvi.*
