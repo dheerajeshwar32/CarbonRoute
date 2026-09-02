@@ -36,7 +36,7 @@ function App() {
   const [result, setResult] = useState(null)
   const [gaugeWidth, setGaugeWidth] = useState(0)
 
-  const API_URL = "http://40.192.119.114:3000/api/v1/inference"
+ const API_URL = "/api/v1/inference"
 
   const handleRouteRequest = async (e) => {
     e.preventDefault()
