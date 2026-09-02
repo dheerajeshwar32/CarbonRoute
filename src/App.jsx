@@ -36,7 +36,7 @@ function App() {
   const [result, setResult] = useState(null)
   const [gaugeWidth, setGaugeWidth] = useState(0)
 
- const API_URL = "/api/v1/inference"
+const API_URL = "https://carbonroute-ipqv.onrender.com/api/v1/inference";
 
   const handleRouteRequest = async (e) => {
     e.preventDefault()
