@@ -2,11 +2,11 @@
 
 **The Frontend Dashboard for Sustainable AI Inference**
 
-This is the client-side interface for **CarbonRoute**, a sustainable AI routing engine. Built with React and Vite, this dashboard allows users to input prompts, configure Service Level Agreement (SLA) weights in real-time, and visualize the exact cloud region, carbon footprint, and latency of their AI inference execution.
+This is the client-side interface for **CarbonRoute**, a sustainable AI routing engine. Built with React and Vite, this dashboard allows users to input prompts and visualize the exact cloud region, carbon footprint, and latency of their AI inference execution.
 
 ## 🚀 Key Features
 
-*   **Dynamic SLA Configuration:** Adjustable sliders allow users to set strict latency limits (e.g., < 200ms) and balance priorities between carbon efficiency and compute cost.
+*   **Fixed SLA Policy:** Evaluates incoming prompts against a strict default latency limit (< 200ms) and balances priorities between carbon efficiency (0.9 weight) and compute cost (0.1 weight) via the backend API.
 *   **Live Telemetry Visualization:** Instantly displays the routing decision, including the selected global region, network latency, and the live carbon intensity (gCO2/kWh) of that specific grid.
 *   **Zero-Emission Cache Indicators:** Automatically detects and highlights when a response is served directly from the edge cache (Redis) resulting in 0 gCO2/kWh emissions.
 *   **Minimalist, Responsive UI:** Built with Tailwind CSS to ensure a clean, accessible, and fast experience across all devices.
