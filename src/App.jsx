@@ -36,8 +36,7 @@ function App() {
   const [result, setResult] = useState(null)
   const [gaugeWidth, setGaugeWidth] = useState(0)
 
-const API_URL = "https://carbonroute-ipqv.onrender.com/api/v1/inference";
-
+const API_URL = import.meta.env.VITE_API_BASE_URL || "https://carbonroute-ipqv.onrender.com/api/v1/inference";
   const handleRouteRequest = async (e) => {
     e.preventDefault()
     setLoading(true)
