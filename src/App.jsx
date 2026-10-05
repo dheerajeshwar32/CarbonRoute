@@ -58,7 +58,11 @@ const API_URL = import.meta.env.VITE_API_BASE_URL || "https://carbonroute-ipqv.o
         })
       })
       const data = await response.json()
-      setResult(data)
+      if (!response.ok) {
+        setResult({ data: `Error: ${data.error || response.statusText}`, telemetry: {} })
+      } else {
+        setResult(data)
+      }
     } catch (error) {
       console.error("Routing failed:", error)
       setResult({ data: "Error: ensure your backend is live.", telemetry: {} })
