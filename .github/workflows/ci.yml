@@ -23,5 +23,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Typecheck TypeScript
+        run: npx tsc --noEmit
+
+      - name: Run Unit Tests
+        run: npm test
+
       - name: Build Production Client
         run: npm run build
